@@ -1,9 +1,17 @@
-fill(0, 0, 0);
-strokeWeight(2);
-stroke(255, 255, 255);
-line(25, 50, 0, 45); 
-line(50, 45, 25, 50);
-rect(0, 50, 50, 50);
-rect(10, 60, 30, 25);
-ellipse(15, 90, 4, 4);
-ellipse(25, 90, 4, 4);
+int radius = 30; 
+float x = radius; 
+float speed = 1.0; 
+int direction = 1;
+void setup( ){
+  size(300, 100); 
+smooth( );
+ellipseMode(RADIUS); }
+void draw( ) 
+{ background(0); 
+x += speed * direction; 
+if( (x > width-radius) || (x < radius) )
+{ direction = -direction; } 
+if(direction == 1)
+{ arc(x, 50, radius, radius, 0.52, 5.76); }
+else { arc(x, 50, radius, radius, 3.67, 8.9); }
+}
